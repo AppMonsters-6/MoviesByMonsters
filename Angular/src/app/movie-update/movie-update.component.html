@@ -1,0 +1,103 @@
+<div>
+    <h1>Movie Update</h1>
+</div>
+
+<div>
+    <h2>Please enter the correct values</h2>
+    <div>
+        <form [formGroup]="myForm" (ngSubmit)="mySubmit()">
+            <div class="form-group row">
+              <label for="movieName" class="col-sm-2 col-form-label">Movie Name</label>
+              <div class="col-sm-10" >
+                <input type="text" class="form-control-plaintext" id="movieName" placeholder="Enter Movie Name" formControlName="movieName" [(ngModel)]="movie.movieName">
+                <div *ngIf="movieName!.invalid && (movieName!.dirty || movieName!.touched)">
+                    Movie's Name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="rating"  class="col-sm-2 col-form-label">Rating (Out of 10)</label>
+              <div class="col-sm-10">
+                <input  type="number" class="form-control" id="rating" placeholder="0.0" formControlName="rating" [(ngModel)]="movie.rating">
+                <div *ngIf="rating!.invalid && (rating!.dirty || rating!.touched)">
+                    Rating is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="genre" class="col-sm-2 col-form-label">Genre</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="genre" placeholder="Enter genre here..." formControlName="genre" [(ngModel)]="movie.genre">
+                  <div *ngIf="genre!.invalid && (genre!.dirty || genre!.touched)">
+                    Movie's genre is required.
+                </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="overview" class="col-sm-2 col-form-label">Overview</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" id="overview" placeholder="Enter overview here..." cols="80" rows="7" formControlName="overview" [(ngModel)]="movie.overview"></textarea>
+                  <div *ngIf="overview!.invalid && (overview!.dirty || overview!.touched)">
+                    Movie's overview is required.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="duration" class="col-sm-2 col-form-label">Duration</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="duration" placeholder="0h 0m" formControlName="duration" [(ngModel)]="movie.duration">
+                  <div *ngIf="duration!.invalid && (duration!.dirty || duration!.touched)">
+                    Movie's duration is required.
+                </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="quality" class="col-sm-2 col-form-label">Quality</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="quality" placeholder="2D/3D" formControlName="quality" [(ngModel)]="movie.quality">
+                  <div *ngIf="quality!.invalid && (quality!.dirty || quality!.touched)">
+                    Movie's available qualitie(s) is/are required.
+                </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="imagePath" class="col-sm-2 col-form-label">Image Path</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="imagePath" placeholder="../../../assets/MovieImages/(movie's image path)" formControlName="imagePath" [(ngModel)]="movie.imagePath">
+                  <div *ngIf="imagePath!.invalid && (imagePath!.dirty || imagePath!.touched)">
+                    Movie's image's path is required.
+                </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="releaseDate" class="col-sm-2 col-form-label">Release Date</label>
+                <div class="col-sm-10">
+                  <input type="date" class="form-control" id="releaseDate" formControlName="releaseDate" [(ngModel)]="movie.releaseDate">
+                  <div *ngIf="releaseDate!.invalid && (releaseDate!.dirty || releaseDate!.touched)">
+                    Movie's releaseDate is required.
+                </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="checkbox" class="col-sm-2 col-form-label">Confirm</label>
+                <div class="col-sm-10">
+                  <input type="checkbox" id="checkbox" [(ngModel)]="isConfirmed" (click)="toggleConfirmed()" required>
+                </div>
+              </div>
+
+              <div>
+                <input class="btn btn-primary" type="submit" value="Submit">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="btn btn-primary" type="reset" value="Reset" (click)="myReset()">
+              </div>
+          </form>
+    </div>
+</div> 

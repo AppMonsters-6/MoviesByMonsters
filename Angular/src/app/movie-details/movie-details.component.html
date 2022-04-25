@@ -1,0 +1,28 @@
+<mat-toolbar-row>
+    <header id="header">
+        <button id="home-button" routerLink="/movieDetails"><img id="home" src="../../assets/home.png" width="40px" height="40px"></button>
+        <div class="header1">
+            <img id="search" src="../assets/FinalSearch1.png" class="rounded mx-auto d-block" alt="...">
+            <input type="search" list placeholder="Search here..." list="movie-names"  (change)="byName($event)" />
+            <datalist id="movie-names">
+                <option *ngFor="let name of movies; index as i">{{name}}</option>
+            </datalist>
+
+        </div>
+    </header>
+</mat-toolbar-row>
+
+<div class="movieDetails" *ngIf="available; else myelse" >
+    <img id="image" [src]="movie.imagePath" class="rounded mx-auto d-block" alt="...">
+    <div id="movieName"><b><i>{{movie.movieName}}</i></b></div>
+    <div id="overview"><textarea rows="4" cols="130" disabled>{{movie.overview}}</textarea></div>
+    <div id="genre"><b><i>Genre:</i></b> {{movie.genre}}</div>
+    <div id="rating"><b><i>Rating:</i></b> {{movie.rating}} &nbsp;<img src="../../assets/imdblogo.png"></div>
+    <div id="quality"><b><i>Quality: </i></b> {{movie.quality}}</div>
+    <div id="releaseDate"><b><i>Release Date:</i></b> {{movie.releaseDate | date: 'mediumDate'}}</div>
+    <div id="duration"><b><i>Duration:</i></b> {{movie.duration}}</div>
+</div>
+<ng-template #myelse>
+    <p>Movie not found...</p>
+</ng-template>
+<router-outlet></router-outlet>

@@ -1,0 +1,41 @@
+<div class="body">
+    <div class="main">
+        <h1 class="title">User Registeration</h1>
+        <p class="fill">Fill All The Columns To Submit</p>
+        <form [formGroup]="myForm" class="form">
+            <label>Name</label>
+            <input type="text" placeholder="Enter your name" name="name" class="fields" id="name" [(ngModel)]="userName"
+                formControlName="name">
+            <div *ngIf="name!.invalid && (name!.dirty || name!.touched)">
+                <p class="requires">Name is required</p>
+            </div>
+            <label>Email Id</label>
+            <input type="text" placeholder="Enter your email Id" name="emailId" class="fields" id="emailId"
+                [(ngModel)]="userEmailId" formControlName="emailid">
+            <div *ngIf="emailid!.invalid && (emailid!.dirty || emailid!.touched)">
+                <p class="requires">Email Id is required</p>
+            </div>
+            <label>Phone Number</label>
+            <input type="text" placeholder="Enter your phone number" name="phoneNumber" class="fields" id="phoneNumber"
+                [(ngModel)]="userPhoneNumber" formControlName="phonenumber">
+            <div *ngIf="phonenumber!.invalid && (phonenumber!.dirty || phonenumber!.touched)">
+                <p class="requires">Phone Number is required</p>
+            </div>
+            <label>Date Of Birth</label>
+            <input type="date" placeholder="dd-mm-yyyy" name="dateOfBirth" class="fields" id="dateOfBirth"
+                [(ngModel)]="userDateOfBirth" formControlName="dateofbirth">
+            <div *ngIf="dateofbirth!.invalid && (dateofbirth!.dirty || dateofbirth!.touched)">
+                <p class="requires">Date Of Birth is required</p>
+            </div>
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" name="password" class="fields" id="password"
+                [(ngModel)]="userPassword" formControlName="passwords">
+            <div *ngIf="passwords!.invalid && (passwords!.dirty || passwords!.touched)">
+                <p class="requires">Paasword is required</p>
+            </div>
+            <button mat-raised-button class="submit" (click)="Register()" type="submit">Submit</button>
+            <button mat-raised-button class="submit" id="reset" type="reset">Reset</button>
+            <button mat-raised-button class="login" type="submit" routerLink="">Login Page</button>
+        </form>
+    </div>
+</div>
