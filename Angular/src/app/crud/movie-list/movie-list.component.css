@@ -1,0 +1,142 @@
+body {
+    background: #d5d8da;
+    /* padding-top: 30px; */
+    padding-bottom: 40px;
+}
+
+.div1 {
+    background-color: rgba(225, 243, 236, 1);
+    width: 290px;
+    height: 420px;
+    box-sizing: content-box;
+    box-shadow: 0px 0px 3px 3px rgb(153, 210, 210);
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    /* margin-top: 20px; */
+    float: left;
+    position: static;
+    align-content: center;
+}
+
+#image {
+    height: 400px;
+    width: 270px;
+    padding-top: 10px;
+    align-content: center;
+    border-radius: 50px;
+}
+
+#header {
+    background: #051b33;
+    width: 100%;
+    height: 150px;
+    position: relative;
+}
+
+#heading {
+    color: #d5d8da;
+    font-size: 30px;
+}
+
+input {
+    box-sizing: border-box;
+    position: absolute;
+    float: left;
+    border: 0;
+    border-radius: 25px;
+    border-color: aqua;
+    width: 200px;
+    height: 50px;
+    align-content: center;
+}
+
+.header1 {
+    position: absolute;
+    top: 23%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+}
+
+input {
+    top: 0;
+    left: 0;
+    width: 100%;
+    ;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.header1:hover {
+    width: 300px;
+    cursor: pointer;
+}
+
+.header1:hover input {
+    display: block;
+}
+
+footer {
+    background: lavender;
+    width: 100%;
+    bottom: 0;
+    align-content: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+#fixedFooter {
+    bottom: 100%;
+    width: 100%;
+    height: 70px;
+    margin-top: 60px;
+}
+
+#headerimage {
+    height: 250px;
+    width: 270px;
+}
+
+.genre {
+    font-family: cursive;
+    font-weight: bold;
+}
+
+/* .spacer {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    bottom: 0;
+} */
+
+#footertag {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    background: lavender; 
+    bottom: 100%;
+}
+
+#log-out, #edit {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

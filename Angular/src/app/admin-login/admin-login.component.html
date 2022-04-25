@@ -1,0 +1,31 @@
+<div class="body">
+  <div class="main1">
+    <h1 class="register">Admin Login</h1>
+    <form [formGroup]="myForm" class="form">
+      <label>EmailId</label>
+      <input type="text" placeholder="Enter your emailId" class="fields" name="emailId" id="emailId"
+        formControlName="emailid" [(ngModel)]="adminEmailId">
+
+      <div *ngIf="emailid!.invalid && (emailid!.dirty || emailid!.touched)">
+        <p class="requires">EmailId is required</p>
+      </div>
+
+      <label>Password</label>
+      <input type="password" placeholder="Enter your password" class="fields" name="password" id="password"
+        formControlName="password" [(ngModel)]="adminPassword">
+      <div *ngIf="password!.invalid && (password!.dirty || password!.touched)">
+        <p class="requires">Password is required</p>
+      </div>
+      <button class="login" (click)="getDetails()">Login</button>
+      <button mat-raised-button class="signUp" type="submit" routerLink="/admin/register">SignUp</button>
+
+
+      <div *ngIf="msg1">
+        <p>Check your emailId or Password</p>
+      </div>
+      <div *ngIf="msg2">
+        <button class="admin" routerLink="/collection">Admin Page</button>
+      </div>
+    </form>
+  </div>
+</div>
